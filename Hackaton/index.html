@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dashboard</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<!-- Строка поиска -->
+<div class="search">
+    <form class="form-inline">
+        <input class="form-control " type="search" placeholder="Start typing here" aria-label="Search">
+        <button  type="submit">Search</button>
+    </form>
+</div>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <form class="navbar-form">
+            <span> | All Charts :</span>
+            <!-- Выбор периода (день, неделя, месяц, год) -->
+                    <select name="period" size="1" width="150px">
+                        <option value="Day">Day</option>
+                        <option value="Week">Week</option>
+                        <option value="Month">Month</option>
+                        <option value="Year">Year</option>
+                    </select>
+            <!-- Выбор даты -->
+                    <input type="date">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                        Manage dashboard
+                    </button>
+
+                    <!--Кнопка модального окна (само окно надо сделать)-->
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Understood</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </form>
+    </nav>
+</header>
+
+<div class="main">
+<!-- Левое меню -->
+    <div class="menu">
+        <ul class="menu-list">
+            <li class="menu-list-item"><a href="#">General</a></li>
+            <li class="menu-list-item"><a href="#">Emails</a></li>
+            <li class="menu-list-item"><a href="#">Calls</a></li>
+            <li class="menu-list-item"><a href="#">Chats</a></li>
+        </ul>
+    </div>
+    <!--Основной  контейнер -->
+        <div class="charts">
+            <h3>Last Week Score</h3>
+            <div class="basic-info">
+                <div class="basic-item">
+                        <div class="basic-item-image">
+                            <img src="./img/hands.jpg" class="img-responsive" alt="">
+                        </div>
+                        <div class="tst-author">
+                            <h4>Company</h4>
+                            <span>16 products</span>
+                            <span>Scored this week</span>
+                        </div>
+                        <p>You perfomance score is based 0n your team activity during week.We analyze hov your agents resolve tickets and provide you app to date accurate information!</p>
+                        <hr>
+                </div>
+                <div class="basic-info-cards">
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Название карточки</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted"></small>
+                                </div>
+                        </div>
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Название карточки</h5>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                        </div>
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Название карточки</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--Блок с графиками-->
+            <div class="charts-cards">
+            <!-- первый график -->
+                <div class="first-chart">
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
+                            <p class="highcharts-description">Chart designed</p>
+                    </figure>
+                </div>
+            <!-- второй график -->
+                <div class="second-chart">
+                    <figure class="highcharts-figure">
+                        <div id="ontainer"></div>
+                        <p class="highcharts-description">Chart designed</p>
+                    </figure>
+            </div>
+        </div>
+
+        </div>
+
+</div>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+
+<script src="js/script.js"></script>
+</body>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Строка поиска -->
+        <div class="search">
+            <form class="form-inline">
+                <input class="form-control " type="search" placeholder="Start typing here" aria-label="Search">
+                <button  type="submit">Search</button>
+            </form>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">Dashboard</a>
+            <form class="navbar-form">
+                <span> | All Charts :</span>
+                <!-- Выбор периода (день, неделя, месяц, год) -->
+                <select name="period" size="1" width="150px">
+                    <option value="Day">Day</option>
+                    <option value="Week">Week</option>
+                    <option value="Month">Month</option>
+                    <option value="Year">Year</option>
+                </select>
+                <!-- Выбор даты -->
+                <input type="date"/>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Manage dashboard</button>                   
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </nav>
+    </header>
+    
+        <!-- Левое меню -->
+    <div class="main">
+        <div class="menu">
+            <ul class="menu-list">
+                <li class="menu-list-item"><a href="general.html">General</a></li>
+                <li class="menu-list-item"><a href="email.html">Emails</a>
+                <li class="menu-list-item"><a href="calls.html">Calls</a></li>
+                <li class="menu-list-item"><a href="chats.html">Chats</a></li>
+            </ul>
+        </div>
+        <div class="qw" >
+            <div class="charts-container">   
+                <div class="charts-item">
+                    <div class="charts-info">
+                        <h3>Tickets Handling</h3>
+                        <form class="date-choice">
+                            <select name="tickets" size="1" width="150px">
+                                <option value="All">All tickets</option>
+                                <option value="Stats">Stats</option>
+                                <option value="Vendor">Median</option>
+                                <option value="Team">Messages Count</option>
+                            </select>
+                            <div class="dates">
+                                <select name="period" size="1" width="150px">
+                                    <option value="Day">Day</option>
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+                                </select>                            
+                                <input type="date">
+                            </div>
+                        </form>                           
+                    </div>
+                    <div id="firstChart"></div>
+                </div>  
+                <div class="charts-item">
+                    <div class="charts-info">
+                        <h3>Chat Messages Count</h3>
+                        <form class="date-choice">
+                            <select name="tickets" size="1" width="150px">
+                                <option value="All">All tickets</option>
+                                <option value="Stats">Stats</option>
+                                <option value="Vendor">Median</option>
+                                <option value="Team">Messages Count</option>
+                            </select>
+                            <div class="dates">
+                                <select name="period" size="1" width="150px">
+                                    <option value="Day">Day</option>
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+                                </select>                            
+                                <input type="date">
+                            </div>
+                        </form>                           
+                    </div>
+                    <div id="secondChart"></div>
+                </div> 
+            </div>
+            <div class="charts-container">   
+                <div class="charts-item">
+                    <div class="charts-info">
+                        <h3>Median Reply Time</h3>
+                        <form class="date-choice">
+                            <select name="tickets" size="1" width="150px">
+                                <option value="All">All tickets</option>
+                                <option value="Stats">Stats</option>
+                                <option value="Vendor">Median</option>
+                                <option value="Team">Messages Count</option>
+                            </select>
+                            <div class="dates">
+                                <select name="period" size="1" width="150px">
+                                    <option value="Day">Day</option>
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+                                </select>                            
+                                <input type="date">
+                            </div>
+                        </form>                           
+                    </div>
+                    <div id="thirdChart"></div>
+                </div>  
+                <div class="charts-item">
+                    <div class="charts-info">
+                        <h3>Hourly Stats</h3>
+                        <form class="date-choice">
+                            <select name="tickets" size="1" width="150px">
+                                <option value="All">All tickets</option>
+                                <option value="Stats">Stats</option>
+                                <option value="Vendor">Median</option>
+                                <option value="Team">Messages Count</option>
+                            </select>
+                            <div class="dates">
+                                <select name="period" size="1" width="150px">
+                                    <option value="Day">Day</option>
+                                    <option value="Week">Week</option>
+                                    <option value="Month">Month</option>
+                                    <option value="Year">Year</option>
+                                </select>                            
+                                <input type="date">
+                            </div>
+                        </form>                           
+                    </div>
+                    <div class="charts-cards" id="fourthChart"></div>
+                </div> 
+            </div>
+        </div> 
+    </div>    
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

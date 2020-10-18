@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dashboard</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<!-- Строка поиска -->
+<div class="search">
+    <form class="form-inline">
+        <input class="form-control " type="search" placeholder="Start typing here" aria-label="Search">
+        <button  type="submit">Search</button>
+    </form>
+</div>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <form class="navbar-form">
+            <span> | All Charts :</span>
+                    <!-- Выбор периода (день, неделя, месяц, год) -->
+                    <select name="period" size="1" width="150px">
+                        <option value="Day">Day</option>
+                        <option value="Week">Week</option>
+                        <option value="Month">Month</option>
+                        <option value="Year">Year</option>
+                    </select>
+                    <!-- Выбор даты -->
+                    <input type="date"/>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                        Manage dashboard
+                    </button>
+
+                    <!--Кнопка модального окна (само окно надо сделать)-->
+                    <div class="modal fade bd-example-modal-lg" id="staticBackdrop"  tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header border-none">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Manage dashboard</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true"> <i class="fas fa-home"></i> General</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="emails-tab" data-toggle="tab" href="#emails" role="tab" aria-controls="emails" aria-selected="false"> <i class="fas fa-envelope"></i> Emails</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="calls-tab" data-toggle="tab" href="#calls" role="tab" aria-controls="calls" aria-selected="false"> <i class="fas fa-phone-alt"></i> Calls</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats" role="tab" aria-controls="chats" aria-selected="false"> <i class="fas fa-comments"></i> Chats</a>
+                                        </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+    
+                                            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                                <div class="content">
+
+                                                    <div class="modal-chart">
+                                                        <div class="chart-img">
+                                                            <img src="img/chart.png" alt="chart" width="475">
+                                                        </div>
+                                                        <div class="modal-text">
+                                                            <h2> New Tickets</h2>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, itaque impedit atque incidunt debitis aut praesentium maxime.</p>
+                                                            <div class="modal-check">
+                                                                <input type="checkbox" onclick="isChek(value)" id="newTickets" name="newTickets" value="newTickets" checked>
+                                                                <label for="newTickets">Show charts</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-chart">
+                                                        <div class="chart-img">
+                                                            <img src="img/chart.png" alt="chart" width="475">
+                                                        </div>
+                                                        <div class="modal-text">
+                                                            <h2> Hourly Statss</h2>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, itaque impedit atque incidunt debitis aut praesentium maxime.</p>
+                                                            <div class="modal-check">
+                                                                <input type="checkbox" onclick="isChek(value)" id="hourlyStats" name="hourlyStats" value="hourlyStats" checked>
+                                                                <label for="hourlyStats">Show charts</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-chart">
+                                                        <div class="chart-img">
+                                                            <img src="img/chart.png" alt="chart" width="475">
+                                                        </div>
+                                                        <div class="modal-text">
+                                                            <h2> Vendor Requestss</h2>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, itaque impedit atque incidunt debitis aut praesentium maxime.</p>
+                                                            <div class="modal-check">
+                                                                <input type="checkbox" onclick="isChek(value)" id="vendorRequests" name="vendorRequests" value="vendorRequests" checked>
+                                                                <label for="vendorRequests">Show charts</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-chart">
+                                                        <div class="chart-img">
+                                                            <img src="img/chart.png" alt="chart" width="475">
+                                                        </div>
+                                                        <div class="modal-text">
+                                                            <h2>Team</h2>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, itaque impedit atque incidunt debitis aut praesentium maxime.</p>
+                                                            <div class="modal-check">
+                                                                <input type="checkbox" onclick="isChek(value)" id="team" name="team" value="team" checked>
+                                                                <label for="team">Show charts</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="emails" role="tabpanel" aria-labelledby="emails-tab">.dsdadasd</div>
+                                            <div class="tab-pane fade" id="calls" role="tabpanel" aria-labelledby="calls-tab">..dsadasdasd.</div>
+                                            <div class="tab-pane fade" id="chats" role="tabpanel" aria-labelledby="chats-tab">..dsadasdasd.</div>
+    
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </form>
+    </nav>
+</header>
+
+<div class="main">
+    <!-- Левое меню -->
+    <div class="menu">
+        <ul class="menu-list">
+            <li class="menu-list-item"><a href="index.html">General</a></li>
+            <li class="menu-list-item"><a href="email.html">Emails</a>
+            <li class="menu-list-item"><a href="calls.html">Calls</a></li>
+            <li class="menu-list-item"><a href="chats.html">Chats</a></li>
+        </ul>
+    </div>
+    <!--Основной  контейнер -->    
+    <div class="charts">
+        <div class="basic">        
+            <h3>Last Week Score</h3>
+                <!--Basic-Info-->
+            <div class="basic-info">
+                <div class="basic-item">
+                    <div class="basic-item-image">
+                        <img src="./img/hands.jpg" class="img-responsive" alt="">
+                    </div>
+                    <div class="tst-author">
+                        <h4>Company</h4>
+                        <a href="#">16 products</a>
+                        <span>Scored this week</span>
+                    </div>
+                    <p>You perfomance score is based on your team activity during week.<br>We analyze hov your agents resolve tickets and provide you app to date accurate information!</p>
+                    
+                </div>                        
+                <div>
+                    <!--Card-Deck-->
+                    <div class="card-deck">
+                        <!--Card-1-->
+                        <div class="card">
+                            <img src="./img/gradient1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="card-image">
+                                    <img src="./img/mail.png" class="img-responsive" alt="">
+                                </div>
+                                <div class="tst-author">
+                                    <h4>Emails</h4>                                                                       
+                                </div>
+                                <hr>
+                                <h6 class="card-title">Awerage time to resolution</h6>
+                                <h5>2<small>m</small>30<small>s</small></h5>
+                                <hr>
+                                <h6 class="card-text">Interactions thread resolution</h6>
+                                <h5>2.5</h5>                               
+                            </div>                            
+                        </div>
+                        <!--Card-2-->
+                        <div class="card">
+                            <img src="./img/gradient.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="card-image">
+                                    <img src="./img/tel.png" class="img-responsive" alt="">
+                                </div>
+                                <div class="tst-author">
+                                    <h4>Calls</h4>                                                                       
+                                </div>
+                                <hr>
+                                <h6 class="card-title">Awerage call duration</h6>
+                                <h5>6<small>m</small>39<small>s</small></h5>
+                                <hr>
+                                <h6 class="card-text">Picked up calls</h6>
+                                <h5>73</h5>
+                            </div>                            
+                        </div>
+                        <!--Card-3-->
+                        <div class="card">
+                            <img src="./img/gradient3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="card-image">
+                                    <img src="./img/chat.png" class="img-responsive" alt="">
+                                </div>
+                                <div class="tst-author">
+                                    <h4>Calls</h4>                                                                       
+                                </div>
+                                <hr>
+                                <h6 class="card-title">Awerage resolution time</h6>
+                                <h5>4<small>m</small>20<small>s</small></h5>
+                                <hr>
+                                <h6 class="card-text">Average response time</h6>
+                                <h5>6<small>m</small>39<small>s</small></h5>                               
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Блок с графиками-->
+
+        <div>
+            <div class="charts-container"> 
+                <!--First Item-->  
+                <div class="charts-item" id="firstItem">
+                    <div class="charts-info">
+                        <h3>New Tickets</h3>
+                        <form class="date-choice">
+                            <select name="period" size="1" width="150px">
+                                <option value="Day">Day</option>
+                                <option value="Week">Week</option>
+                                <option value="Month">Month</option>
+                                <option value="Year">Year</option>
+                            </select>                            
+                            <input type="date">
+                        </form>                           
+                    </div>
+                </div>
+                <!--Second Item-->  
+                <div class="charts-item"  id="secondItem">
+                    <div class="charts-info">
+                        <h3>Hourly Stats</h3>
+                        <form class="date-choice">
+                            <select name="period" size="1" width="150px">
+                                <option value="Day">Day</option>
+                                <option value="Week">Week</option>
+                                <option value="Month">Month</option>
+                                <option value="Year">Year</option>
+                            </select>                            
+                            <input type="date">
+                        </form>                           
+                    </div>
+                </div> 
+            </div>
+            <div class="charts-container"> 
+                <!--Third Item-->  
+                <div class="charts-item" id="thirdItem">
+                    <div class="charts-info">
+                        <h3>Vendor Requests</h3>
+                        <form class="date-choice">
+                            <select name="period" size="1" width="150px">
+                                <option value="Day">Day</option>
+                                <option value="Week">Week</option>
+                                <option value="Month">Month</option>
+                                <option value="Year">Year</option>
+                            </select>                            
+                            <input type="date">
+                        </form>                           
+                    </div>
+                </div>
+                <!--Fourth Item-->  
+                <div class="charts-item" id="fourthItem">
+                    <div class="charts-info">
+                        <h3>Team</h3>
+                        <form class="date-choice">
+                            <select name="period" size="1" width="150px">
+                                <option value="Day">Day</option>
+                                <option value="Week">Week</option>
+                                <option value="Month">Month</option>
+                                <option value="Year">Year</option>
+                            </select>                            
+                            <input type="date">
+                        </form>                           
+                    </div>
+                </div> 
+            </div>
+        </div>           
+        
+    </div>
+</div>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://kit.fontawesome.com/860241e301.js" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
